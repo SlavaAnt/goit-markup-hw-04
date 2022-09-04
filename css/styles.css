@@ -11,11 +11,17 @@
   --t-logo-black-color: #000000;
   --t-gray-color: rgba(255, 255, 255, 0.6);
 
+  /* Icons */
+  --i-main-color: #AFB1B8;
+  --i-secondary-color: #757575;
+  --i--white-color: #ffffff;
+
   /* Background colors*/
   --bgd-white-color: #ffffff;
   --bgd-primary-color: #f5f5f5;
   --bgd-secondary-color: #2f303a;
   --bgd-cinereous-color: #f5f4fa;
+  --bgd-gray-color: rgba(255, 255, 255, 0.1);
 
   /* Border colors*/
   --br-header-light-color: #ececec;
@@ -119,7 +125,7 @@ p {
 .nav {
   display: flex;
   align-items: center;
-  margin-right: 344px;
+  margin-right: auto;
 }
 .nav-list {
   display: flex;
@@ -146,17 +152,25 @@ p {
   gap: 50px;
 }
 .contact-link {
-  display: inline-block;
+  display: flex;
+  align-items: center;
+  gap: 10px;
   padding: 31px 0;
   font-weight: 500;
   line-height: calc(16 / 14);
   letter-spacing: 0.02em;
   color: var(--t-secondary-color);
 }
+.contact-icon {
+  fill: currentColor;
+}
 .contact-link:hover,
 .contact-link:focus {
   color: var(--t-accent-color);
 }
+
+
+
 /**
   |============================
   | MAIN
@@ -167,6 +181,14 @@ p {
 .hero {
   padding: 200px 0;
   background-color: var(--bgd-secondary-color);
+  background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(../images/hero-fon/hero-fon.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  max-width: 1600px;
+  margin-right: auto;
+  margin-left: auto;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
 
 .hero-title {
@@ -224,6 +246,49 @@ p {
 .about-item {
   width: 270px;
 }
+/*
+.about-item::before {
+  display: block;
+  content: " ";
+  height: 120px ;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: var(--bgd-cinereous-color);
+}
+.icon-antenna::before {
+  background-image: url(../images/icons/antenna.svg);
+}
+.icon-astronaut::before {
+  background-image: url(../images/icons/astronaut.svg);
+} 
+.icon-clock::before {
+  background-image: url(../images/icons/clock.svg);
+} 
+.icon-diagram::before {
+background-image: url(../images/icons/diagram.svg);
+} 
+*/
+
+.about-icon-bgi {
+  background-color: var(--bgd-cinereous-color);
+  margin-bottom: 30px;
+}
+.icon-antenna {
+  height: 120px;
+  background-image: url(../images/icons/antenna.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.about-icon-svg {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 270px;
+  height: 120px;
+  margin-bottom: 30px;
+}
+
 .about-subtitle {
   margin-bottom: 10px;
   font-size: 14px;
@@ -259,14 +324,15 @@ p {
   background-color: var(--bgd-cinereous-color);
 }
 .team-item {
-  padding-bottom: 30px;
   background: var(--bgd-white-color);
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 0px 0px 4px 4px;
 }
 .team-img {
-  padding-bottom: 30px;
+}
+.team-wrap {
+  padding: 30px 32px ;
 }
 .team-subtitle {
   margin-bottom: 10px;
@@ -277,21 +343,88 @@ p {
   letter-spacing: 0.03em;
 }
 .team-text {
+  margin-bottom: 16px;
   font-size: 16px;
   line-height: calc(19 / 16);
   text-align: center;
   letter-spacing: 0.03em;
   color: var(--t-secondary-color);
 }
+.social-list {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+.social-link {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: var(--bgd-white-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.social-link:hover,
+.social-link:focus {
+  background-color: var(--t-accent-color);
+ }
+.social-icon {
+  fill: var(--i-main-color);
+}
+ .social-item:hover .social-icon,
+ .social-item:focus .social-icon {
+  fill: var(--t-light-color);
+ }
+  
+ /* Clients */
+.clients-title {
+  margin-bottom: 50px;
+  font-size: 36px;
+  line-height: 42px;
+  text-align: center;
+  letter-spacing: 0.03em;
+  color: var(--t-primary-color);
+}
+.clients-list {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+}
+.client-item {
+    
+}
+.client-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 170px;
+  height: 92px;
+  background-color: var(--bgd-white-color);
+  border: 1px solid #AFB1B8;
+  border-radius: 4px;
+}
+.client-link:hover,
+.client-link:focus {
+  border: 1px solid var(--t-accent-color);
+}
+.client-icon {
+  fill: var(--i-main-color);
+}
+.client-link:hover .client-icon,
+.client-link:focus .client-icon {
+  fill: var(--t-accent-color);
+}
+
+
 /**
   |============================
   |       PORTFOLIO 
   |============================
 */
-/*  
+ 
 .pf {
   padding-top: 94;
-}*/
+}
 .pf-list-filters {
   display: flex;
   gap: 8px;
@@ -329,6 +462,10 @@ p {
 .pf-list .pf-item {
   width: 370px;
   background-color: var(--bgd-white-color);
+  border: 1px solid  var(--br-pf-light-gray-color);
+}
+.pf-list .pf-item:hover {
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 .pf-title-text {
   border-left: 1px solid var(--br-pf-light-gray-color);
@@ -357,6 +494,15 @@ p {
 .footer {
   padding: 60px 0;
   background: var(--bgd-secondary-color);
+}
+
+.container-footer {
+  display: flex;
+  align-items: baseline;
+}
+.container-footer-left {
+  width: 231px;
+  margin-right: 70px;
 }
 .footer-logo {
   display: inline-block;
@@ -396,3 +542,42 @@ p {
 .footer-link:focus {
   color: var(--t-accent-color);
 }
+
+.container-footer-social {
+  margin-top: 12px;
+}
+.footer-social-title {
+  margin-bottom: 20px;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: calc(16 / 14);
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--t-light-color);
+}
+.footer-social-list {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+.footer-social-link {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  background-color: var(--bgd-gray-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.footer-social-link:hover,
+.footer-social-link:focus {
+  background-color: var(--t-accent-color);
+ }
+.footer-social-icon {
+  fill: var(--i--white-color);
+}
+.footer-social-item:hover .social-icon,
+.footer-social-item:focus .social-icon {
+  fill: var(--t-light-color);
+ }
